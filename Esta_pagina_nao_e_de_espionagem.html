@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esta página não é de espionagem</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        header {
+            height: 8rem;
+            background-color: blueviolet;
+            color: white;
+            padding: 2rem;
+            border: 0px solid blueviolet;
+            border-radius: 0 0 15px 15px;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+
+        main {
+            padding: 2rem;
+            margin-top: -0.7rem;
+            height: calc(100vh - 15.6rem);
+        }
+
+        #endereco {
+            display: inline;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .field {
+            margin: 0.1rem;
+        }
+
+        #resposta {
+            padding-top: 0.5rem;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Esta não é uma página de espionagem.</h1>
+    </header>
+    <main id="corpo">
+        <form id="endereco" action="">
+            <label for="rua">Rua: </label>
+            <input class="field" type="text" id="rua" name="rua" required><br>
+            <label for="numero">Número: </label>
+            <input class="field" type="number" id="numero" name="numero" required><br>
+            <label for="bairro">Bairro: </label>
+            <input class="field" type="text" id="bairro" name="bairro" required><br>
+            <label for="cidade">Cidade: </label>
+            <input class="field" type="text" id="cidade" name="cidade" required><br>
+            <label for="uf">UF: </label>
+            <input class="field" type="text" id="uf" name="uf" required><br>
+            <button type="button" id="concluir" onclick="lerDadosEEscrever()">Concluir</button>
+        </form>
+        <p id="resposta">Insira seus dados acima.</p>
+    
+        <script>
+            function lerDadosEEscrever() {
+                var endereco = {
+                    rua: document.querySelector("#rua").value,
+                    numero: document.querySelector("#numero").value,
+                    bairro: document.querySelector("#bairro").value,
+                    cidade: document.querySelector("#cidade").value,
+                    uf: document.querySelector("#uf").value
+                };
+    
+                var mensagem = "O usuário mora em " + endereco.cidade + " / " + endereco.uf + ", no bairro " + endereco.bairro + ", na rua " + endereco.rua+ " com nº " + endereco.numero;
+    
+                document.querySelector("#resposta").innerHTML = `<h2><strong>${mensagem}</strong></h2>`;
+                document.querySelector("#resposta").style.color = "white";
+                document.querySelector("#concluir").innerHTML = `Logo o espião chega!`;
+                document.querySelector("#corpo").style.background = `url('https://media1.giphy.com/media/Zvgb12U8GNjvq/giphy.gif?cid=ecf05e47ivhy9tsewy5j52otou4pcxwjmvm9rzihrqjxbzdk&rid=giphy.gif')`;
+                document.querySelector("#rua").style.opacity = "0";
+                document.querySelector("#numero").style.opacity = "0";
+                document.querySelector("#bairro").style.opacity = "0";
+                document.querySelector("#cidade").style.opacity = "0";
+                document.querySelector("#uf").style.opacity = "0";
+            };
+            
+        </script>
+    
+    </main>
+</body>
+</html>
+
+
+<!-- <div style="width:100%;height:0;padding-bottom:67%;position:relative;"><iframe src="https://giphy.com/embed/Zvgb12U8GNjvq" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/look-glasses-Zvgb12U8GNjvq">via GIPHY</a></p> -->
