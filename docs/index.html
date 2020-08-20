@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esta página não é de espionagem</title>
+    <title class="titulo">Esta não é uma página de espionagem</title>
     <style>
         body {
             margin: 0;
@@ -45,7 +45,7 @@
 </head>
 <body>
     <header>
-        <h1 id="titulo">Esta não é uma página de espionagem.</h1>
+        <h1 class="titulo-header">Esta não é uma página de espionagem.</h1>
     </header>
     <main id="corpo">
         <form id="endereco" action="">
@@ -75,7 +75,8 @@
     
                 var mensagem = "O usuário mora em " + endereco.cidade + " / " + endereco.uf + ", no bairro " + endereco.bairro + ", na rua " + endereco.rua+ " com nº " + endereco.numero;
     
-                document.querySelector("#titulo").innerHTML = "Esta é uma página de espionagem.";
+                document.querySelector(".titulo").innerHTML = `Esta é uma página de espionagem.`
+                document.querySelector(".titulo-header").innerHTML = `Esta é uma página de espionagem.`
                 document.querySelector("#resposta").innerHTML = `<h2><strong>${mensagem}</strong></h2>`;
                 document.querySelector("#resposta").style.color = "white";
                 document.querySelector("#concluir").innerHTML = `Logo o espião chega!`;
@@ -92,6 +93,3 @@
     </main>
 </body>
 </html>
-
-
-<!-- <div style="width:100%;height:0;padding-bottom:67%;position:relative;"><iframe src="https://giphy.com/embed/Zvgb12U8GNjvq" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/look-glasses-Zvgb12U8GNjvq">via GIPHY</a></p> -->
